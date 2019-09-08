@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sandy_Marketplace extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Sandy
+ * @package        Sandy_Marketplace
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <api2>
+        <resource_groups>
+            <sandy_marketplace translate="title" module="sandy_marketplace">
+                <title>Marketplace</title>
+                <sort_order>120</sort_order>
+                <children>
+                    <sandy_marketplace_vendor translate="title" module="sandy_marketplace">
+                        <title>Vendor</title>
+                        <sort_order>0</sort_order>
+                    </sandy_marketplace_vendor>
+
+                </children>
+            </sandy_marketplace>
+        </resource_groups>
+        <resources>
+            <sandy_marketplace_vendor translate="title" module="sandy_marketplace">
+                <group>sandy_marketplace_vendor</group>
+                <model>sandy_marketplace/api2_vendor</model>
+                <working_model>sandy_marketplace/vendor</working_model>
+                <title>Vendor</title>
+                <sort_order>0</sort_order>
+                <privileges>
+                    <admin>
+                        <create>1</create>
+                        <retrieve>1</retrieve>
+                        <update>1</update>
+                        <delete>1</delete>
+                    </admin>
+                    <customer>
+                        <retrieve>1</retrieve>
+                    </customer>
+                    <guest>
+                        <retrieve>1</retrieve>
+                    </guest>
+                </privileges>
+                <attributes translate="entity_id name shopurl phone businesstype birthdate profilepic description gender banner status url_key in_rss meta_title meta_keywords meta_description allow_comment" module="sandy_marketplace">
+                    <entity_id>Id</entity_id>
+                    <name>Vendor Name</name>
+                    <shopurl>Shop URL</shopurl>
+                    <phone>Phone</phone>
+                    <businesstype>Business Type</businesstype>
+                    <birthdate>Birth Date</birthdate>
+                    <profilepic>Profile Picture</profilepic>
+                    <description>Description</description>
+                    <gender>Gender</gender>
+                    <banner>Banner</banner>
+                    <status>Enabled</status>
+                    <url_key>URL key</url_key>
+                    <in_rss>In RSS</in_rss>
+                    <meta_title>Meta title</meta_title>
+                    <meta_keywords>Meta keywords</meta_keywords>
+                    <meta_description>Meta description</meta_description>
+                    <allow_comment>Allow Comment</allow_comment>
+                </attributes>
+                <routes>
+                    <route_entity>
+                        <route>/marketplace_vendors/:id</route>
+                        <action_type>entity</action_type>
+                    </route_entity>
+                    <route_entity_with_store>
+                        <route>/marketplace_vendors/:id/store/:store</route>
+                        <action_type>entity</action_type>
+                    </route_entity_with_store>
+                    <route_collection>
+                        <route>/marketplace_vendors</route>
+                        <action_type>collection</action_type>
+                    </route_collection>
+                    <route_collection_with_store>
+                        <route>/marketplace_vendors/store/:store</route>
+                        <action_type>collection</action_type>
+                    </route_collection_with_store>
+                </routes>
+                <versions>1</versions>
+            </sandy_marketplace_vendor>
+
+        </resources>
+    </api2>
+</config>

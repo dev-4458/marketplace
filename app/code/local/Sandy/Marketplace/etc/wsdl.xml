@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:typens="urn:{{var wsdl.name}}" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+    name="{{var wsdl.name}}" targetNamespace="urn:{{var wsdl.name}}">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Magento">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/" />
+            <complexType name="marketplaceVendorListEntity">
+                <all>
+                    <element name="entity_id" type="xsd:string" minOccurs="1" />
+                    <element name="name" type="xsd:string" minOccurs="1" />
+                    <element name="shopurl" type="xsd:string" minOccurs="1" />
+                    <element name="phone" type="xsd:string" minOccurs="1" />
+                    <element name="businesstype" type="xsd:string" minOccurs="1" />
+                    <element name="birthdate" type="xsd:string" minOccurs="0" />
+                    <element name="profilepic" type="xsd:string" minOccurs="0" />
+                    <element name="description" type="xsd:string" minOccurs="0" />
+                    <element name="gender" type="xsd:string" minOccurs="1" />
+                    <element name="banner" type="xsd:string" minOccurs="0" />
+                    <element name="status" type="xsd:string" minOccurs="0" />
+                    <element name="url_key" type="xsd:string" minOccurs="0" />
+                    <element name="in_rss" type="xsd:string" minOccurs="0" />
+                    <element name="meta_title" type="xsd:string" minOccurs="0" />
+                    <element name="meta_keywords" type="xsd:string" minOccurs="0" />
+                    <element name="meta_description" type="xsd:string" minOccurs="0" />
+                    <element name="allow_comment" type="xsd:string" minOccurs="0" />
+                    <element name="additional_attributes" type="typens:marketplaceVendorAdditionalAttributesEntity" minOccurs="0"/>
+
+                    <element name="created_at" type="xsd:string" minOccurs="1" />
+                    <element name="updated_at" type="xsd:string" minOccurs="1" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorListEntityArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:marketplaceVendorListEntity[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="marketplaceVendorAddEntity">
+                <all>
+                    <element name="name" type="xsd:string" minOccurs="1" />
+                    <element name="shopurl" type="xsd:string" minOccurs="1" />
+                    <element name="phone" type="xsd:string" minOccurs="1" />
+                    <element name="businesstype" type="xsd:string" minOccurs="1" />
+                    <element name="birthdate" type="xsd:string" minOccurs="0" />
+                    <element name="profilepic" type="xsd:string" minOccurs="0" />
+                    <element name="description" type="xsd:string" minOccurs="0" />
+                    <element name="gender" type="xsd:string" minOccurs="1" />
+                    <element name="banner" type="xsd:string" minOccurs="0" />
+                    <element name="status" type="xsd:string" minOccurs="0" />
+                    <element name="url_key" type="xsd:string" minOccurs="0" />
+                    <element name="in_rss" type="xsd:string" minOccurs="0" />
+                    <element name="meta_title" type="xsd:string" minOccurs="0" />
+                    <element name="meta_keywords" type="xsd:string" minOccurs="0" />
+                    <element name="meta_description" type="xsd:string" minOccurs="0" />
+                    <element name="allow_comment" type="xsd:string" minOccurs="0" />
+                    <element name="additional_attributes" type="typens:marketplaceVendorAdditionalAttributesEntity" minOccurs="0"/>
+
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorUpdateEntity">
+                <all>
+                    <element name="name" type="xsd:string" minOccurs="1" />
+                    <element name="shopurl" type="xsd:string" minOccurs="1" />
+                    <element name="phone" type="xsd:string" minOccurs="1" />
+                    <element name="businesstype" type="xsd:string" minOccurs="1" />
+                    <element name="birthdate" type="xsd:string" minOccurs="0" />
+                    <element name="profilepic" type="xsd:string" minOccurs="0" />
+                    <element name="description" type="xsd:string" minOccurs="0" />
+                    <element name="gender" type="xsd:string" minOccurs="1" />
+                    <element name="banner" type="xsd:string" minOccurs="0" />
+                    <element name="status" type="xsd:string" minOccurs="0" />
+                    <element name="url_key" type="xsd:string" minOccurs="0" />
+                    <element name="in_rss" type="xsd:string" minOccurs="0" />
+                    <element name="meta_title" type="xsd:string" minOccurs="0" />
+                    <element name="meta_keywords" type="xsd:string" minOccurs="0" />
+                    <element name="meta_description" type="xsd:string" minOccurs="0" />
+                    <element name="allow_comment" type="xsd:string" minOccurs="0" />
+                    <element name="additional_attributes" type="typens:marketplaceVendorAdditionalAttributesEntity" minOccurs="0"/>
+
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorInfoEntity">
+                <all>
+                    <element name="entity_id" type="xsd:string" minOccurs="1" />
+                    <element name="name" type="xsd:string" minOccurs="1" />
+                    <element name="shopurl" type="xsd:string" minOccurs="1" />
+                    <element name="phone" type="xsd:string" minOccurs="1" />
+                    <element name="businesstype" type="xsd:string" minOccurs="1" />
+                    <element name="birthdate" type="xsd:string" minOccurs="0" />
+                    <element name="profilepic" type="xsd:string" minOccurs="0" />
+                    <element name="description" type="xsd:string" minOccurs="0" />
+                    <element name="gender" type="xsd:string" minOccurs="1" />
+                    <element name="banner" type="xsd:string" minOccurs="0" />
+                    <element name="status" type="xsd:string" minOccurs="0" />
+                    <element name="url_key" type="xsd:string" minOccurs="0" />
+                    <element name="in_rss" type="xsd:string" minOccurs="0" />
+                    <element name="meta_title" type="xsd:string" minOccurs="0" />
+                    <element name="meta_keywords" type="xsd:string" minOccurs="0" />
+                    <element name="meta_description" type="xsd:string" minOccurs="0" />
+                    <element name="allow_comment" type="xsd:string" minOccurs="0" />
+                    <element name="additional_attributes" type="typens:marketplaceVendorAdditionalAttributesEntity" minOccurs="0"/>
+
+                    <element name="created_at" type="xsd:string" minOccurs="1" />
+                    <element name="updated_at" type="xsd:string" minOccurs="1" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorAssignProductEntity">
+                <all>
+                <element name="vendorId" type="xsd:string" minOccurs="1" />
+                <element name="productId" type="xsd:string" minOccurs="1" />
+                <element name="position" type="xsd:string" minOccurs="0" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorUnassignProductEntity">
+                <all>
+                <element name="vendorId" type="xsd:string" minOccurs="1" />
+                <element name="productId" type="xsd:string" minOccurs="1" />
+                </all>
+            </complexType>
+                    <complexType name="marketplaceVendorCommentListEntity">
+                <all>
+                    <element name="comment_id" type="xsd:string" minOccurs="1" />
+                    <element name="vendor_id" type="xsd:string" minOccurs="1" />
+                    <element name="title" type="xsd:string" minOccurs="1" />
+                    <element name="comment" type="xsd:string" minOccurs="1" />
+                    <element name="status" type="xsd:string" minOccurs="1" />
+                    <element name="customer_id" type="xsd:string" minOccurs="1" />
+                    <element name="name" type="xsd:string" minOccurs="1" />
+                    <element name="email" type="xsd:string" minOccurs="1" />
+                    <element name="created_at" type="xsd:string" minOccurs="1" />
+                    <element name="updated_at" type="xsd:string" minOccurs="1" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorCommentListEntityArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:marketplaceVendorCommentListEntity[]" />
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="marketplaceVendorAdditionalAttributesEntity">
+                <all>
+                    <element name="multi_data" type="typens:associativeMultiArray" minOccurs="0" />
+                    <element name="single_data" type="typens:associativeArray" minOccurs="0" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeOptionEntity">
+                <all>
+                    <element name="label" type="xsd:string"/>
+                    <element name="value" type="xsd:string"/>
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeOptionEntityArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:marketplaceVendorAttributeOptionEntity[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeOptionLabelEntity">
+                <all>
+                    <element name="store_id" type="typens:ArrayOfString" />
+                    <element name="value" type="xsd:string" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeOptionLabelArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:marketplaceVendorAttributeOptionLabelEntity[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="marketplaceVendorRequestAttributes">
+                <all>
+                    <element name="attributes" type="typens:ArrayOfString" minOccurs="0"/>
+                    <element name="additional_attributes" type="typens:ArrayOfString" minOccurs="0"/>
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeFrontendLabelEntity">
+                <all>
+                    <element name="store_id" type="xsd:string" />
+                    <element name="label" type="xsd:string" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeFrontendLabelArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:marketplaceVendorAttributeFrontendLabelEntity[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeEntityToCreate">
+                <all>
+                    <element name="attribute_code" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                    <element name="frontend_input" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                    <element name="scope" type="xsd:string" minOccurs="0" />
+                    <element name="default_value" type="xsd:string" minOccurs="0" />
+                    <element name="is_required" type="xsd:int" minOccurs="0" />
+                    <element name="additional_fields" type="typens:associativeArray" minOccurs="0"/>
+                    <element name="frontend_label" type="typens:marketplaceVendorAttributeFrontendLabelArray" minOccurs="1" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeEntityToUpdate">
+                <all>
+                    <element name="scope" type="xsd:string" minOccurs="0" />
+                    <element name="default_value" type="xsd:string" minOccurs="0" />
+                    <element name="is_required" type="xsd:int" minOccurs="0" />
+                    <element name="additional_fields" type="typens:associativeArray" minOccurs="0"/>
+                    <element name="frontend_label" type="typens:marketplaceVendorAttributeFrontendLabelArray" minOccurs="1" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeEntity">
+                <all>
+                    <element name="attribute_id" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                    <element name="attribute_code" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                    <element name="frontend_input" type="xsd:string" minOccurs="1" maxOccurs="1" />
+                    <element name="scope" type="xsd:string" minOccurs="0" />
+                    <element name="default_value" type="xsd:string" minOccurs="0" />
+                    <element name="is_required" type="xsd:int" minOccurs="0" />
+                    <element name="additional_fields" type="typens:associativeArray" minOccurs="0"/>
+                    <element name="options" type="typens:marketplaceVendorAttributeOptionEntityArray" minOccurs="0"/>
+                    <element name="frontend_label" type="typens:marketplaceVendorAttributeFrontendLabelArray" minOccurs="1" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeOptionLabelEntity">
+                <all>
+                    <element name="store_id" type="typens:ArrayOfString" />
+                    <element name="value" type="xsd:string" />
+                </all>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeOptionLabelArray">
+                <complexContent>
+                    <restriction base="soapenc:Array">
+                        <attribute ref="soapenc:arrayType" wsdl:arrayType="typens:marketplaceVendorAttributeOptionLabelEntity[]"/>
+                    </restriction>
+                </complexContent>
+            </complexType>
+            <complexType name="marketplaceVendorAttributeOptionEntityToAdd">
+                <all>
+                    <element name="label" type="typens:marketplaceVendorAttributeOptionLabelArray" />
+                    <element name="order" type="xsd:int" />
+                    <element name="is_default" type="xsd:int" />
+                </all>
+            </complexType>
+        </schema>
+    </types>
+    <message name="marketplaceVendorListRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="filters" type="typens:filters"/>
+    </message>
+    <message name="marketplaceVendorListResponse">
+        <part name="result" type="typens:marketplaceVendorListEntityArray" />
+    </message>
+    <message name="marketplaceVendorInfoRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="vendorId" type="xsd:string" />
+    </message>
+    <message name="marketplaceVendorInfoResponse">
+        <part name="result" type="typens:marketplaceVendorInfoEntity" />
+    </message>
+    <message name="marketplaceVendorAddRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="data" type="typens:marketplaceVendorAddEntity" />
+    </message>
+    <message name="marketplaceVendorAddResponse">
+        <part name="result" type="xsd:int"/>
+    </message>
+    <message name="marketplaceVendorUpdateRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="vendorId" type="xsd:string" />
+        <part name="data" type="typens:marketplaceVendorUpdateEntity" />
+    </message>
+    <message name="marketplaceVendorUpdateResponse">
+        <part name="result" type="xsd:boolean" />
+    </message>
+    <message name="marketplaceVendorRemoveRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="vendorId" type="xsd:string" />
+    </message>
+    <message name="marketplaceVendorRemoveResponse">
+        <part name="result" type="xsd:boolean" />
+    </message>
+        <message name="marketplaceVendorAssignProductRequest">
+            <part name="sessionId" type="xsd:string" />
+            <part name="vendor_id" type="xsd:string" />
+            <part name="product_id" type="xsd:string" />
+            <part name="position" type="xsd:string" />
+        </message>
+        <message name="marketplaceVendorAssignProductResponse">
+            <part name="result" type="xsd:boolean" />
+        </message>
+        <message name="marketplaceVendorUnassignProductRequest">
+            <part name="session_id" type="xsd:string" />
+            <part name="vendor_id" type="xsd:string" />
+            <part name="product_id" type="xsd:string" />
+        </message>
+        <message name="marketplaceVendorUnassignProductResponse">
+            <part name="result" type="xsd:boolean" />
+        </message>
+        <message name="marketplaceVendorCommentListRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="filters" type="typens:filters"/>
+    </message>
+    <message name="marketplaceVendorCommentListResponse">
+        <part name="result" type="typens:marketplaceVendorCommentListEntityArray" />
+    </message>
+    <message name="marketplaceVendorCommentUpdateStatusRequest">
+        <part name="sessionId" type="xsd:string" />
+        <part name="commentId" type="xsd:string" />
+        <part name="status" type="xsd:string" />
+    </message>
+    <message name="marketplaceVendorCommentUpdateStatusResponse">
+        <part name="result" type="xsd:int" />
+    </message>
+    <message name="marketplaceVendorListOfAdditionalAttributesRequest">
+        <part name="sessionId" type="xsd:string" />
+    </message>
+    <message name="marketplaceVendorListOfAdditionalAttributesResponse">
+        <part name="result" type="typens:marketplaceVendorAttributeEntityArray" />
+    </message>
+    <message name="marketplaceVendorAttributeCurrentStoreRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="storeView" type="xsd:string"/>
+    </message>
+    <message name="marketplaceVendorAttributeCurrentStoreResponse">
+        <part name="storeView" type="xsd:int"/>
+    </message>
+    <message name="marketplaceVendorAttributeListRequest">
+        <part name="sessionId" type="xsd:string"/>
+    </message>
+    <message name="marketplaceVendorAttributeListResponse">
+        <part name="result" type="typens:marketplaceVendorAttributeEntityArray"/>
+    </message>
+    <message name="marketplaceVendorAttributeOptionsRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="attributeId" type="xsd:string"/>
+        <part name="storeView" type="xsd:string"/>
+    </message>
+    <message name="marketplaceVendorAttributeOptionsResponse">
+        <part name="result" type="typens:marketplaceVendorAttributeOptionEntityArray"/>
+    </message>
+    <message name="marketplaceVendorAttributeTypesRequest">
+        <part name="sessionId" type="xsd:string"/>
+    </message>
+    <message name="marketplaceVendorAttributeTypesResponse">
+        <part name="result" type="typens:marketplaceVendorAttributeOptionEntityArray" />
+    </message>
+    <message name="marketplaceVendorAttributeCreateRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="data" type="typens:marketplaceVendorAttributeEntityToCreate"/>
+    </message>
+    <message name="marketplaceVendorAttributeCreateResponse">
+        <part name="result" type="xsd:int" />
+    </message>
+    <message name="marketplaceVendorAttributeRemoveRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="attribute" type="xsd:string"/>
+    </message>
+    <message name="marketplaceVendorAttributeRemoveResponse">
+        <part name="result" type="xsd:boolean" />
+    </message>
+    <message name="marketplaceVendorAttributeInfoRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="attribute" type="xsd:string"/>
+    </message>
+    <message name="marketplaceVendorAttributeInfoResponse">
+        <part name="result" type="typens:marketplaceVendorAttributeEntity" />
+    </message>
+    <message name="marketplaceVendorAttributeUpdateRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="attribute" type="xsd:string"/>
+        <part name="data" type="typens:marketplaceVendorAttributeEntityToUpdate"/>
+    </message>
+    <message name="marketplaceVendorAttributeUpdateResponse">
+        <part name="result" type="xsd:boolean" />
+    </message>
+    <message name="marketplaceVendorAttributeAddOptionRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="attribute" type="xsd:string"/>
+        <part name="data" type="typens:marketplaceVendorAttributeOptionEntityToAdd"/>
+    </message>
+    <message name="marketplaceVendorAttributeAddOptionResponse">
+        <part name="result" type="xsd:boolean" />
+    </message>
+    <message name="marketplaceVendorAttributeRemoveOptionRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="attribute" type="xsd:string"/>
+        <part name="optionId" type="xsd:string"/>
+    </message>
+    <message name="marketplaceVendorAttributeRemoveOptionResponse">
+        <part name="result" type="xsd:boolean" />
+    </message>
+    <portType name="{{var wsdl.handler}}PortType">
+        <operation name="marketplaceVendorList">
+            <documentation>Retrieve list of vendor</documentation>
+            <input message="typens:marketplaceVendorListRequest" />
+            <output message="typens:marketplaceVendorListResponse" />
+        </operation>
+        <operation name="marketplaceVendorInfo">
+            <documentation>Retrieve vendor info</documentation>
+            <input message="typens:marketplaceVendorInfoRequest" />
+            <output message="typens:marketplaceVendorInfoResponse" />
+        </operation>
+        <operation name="marketplaceVendorAdd">
+            <documentation>Add vendor</documentation>
+            <input message="typens:marketplaceVendorAddRequest" />
+            <output message="typens:marketplaceVendorAddResponse" />
+        </operation>
+        <operation name="marketplaceVendorUpdate">
+            <documentation>Update vendor</documentation>
+            <input message="typens:marketplaceVendorUpdateRequest" />
+            <output message="typens:marketplaceVendorUpdateResponse" />
+        </operation>
+        <operation name="marketplaceVendorRemove">
+            <documentation>Remove vendor</documentation>
+            <input message="typens:marketplaceVendorRemoveRequest" />
+            <output message="typens:marketplaceVendorRemoveResponse" />
+        </operation>
+        <operation name="marketplaceVendorAssignProduct">
+            <documentation>Assign product to vendor</documentation>
+            <input message="typens:marketplaceVendorAssignProductRequest" />
+            <output message="typens:marketplaceVendorAssignProductResponse" />
+        </operation>
+        <operation name="marketplaceVendorUnassignProduct">
+            <documentation>Remove product from vendor</documentation>
+            <input message="typens:marketplaceVendorUnassignProductRequest" />
+            <output message="typens:marketplaceVendorUnassignProductResponse" />
+        </operation>
+            <operation name="marketplaceVendorCommentList">
+            <documentation>Retrieve list of vendor comments</documentation>
+            <input message="typens:marketplaceVendorCommentListRequest" />
+            <output message="typens:marketplaceVendorCommentListResponse" />
+        </operation>
+        <operation name="marketplaceVendorCommentUpdateStatus">
+            <documentation>Change vendor comment status</documentation>
+            <input message="typens:marketplaceVendorCommentUpdateStatusRequest" />
+            <output message="typens:marketplaceVendorCommentUpdateStatusResponse" />
+        </operation>
+        <operation name="marketplaceVendorListOfAdditionalAttributes">
+            <documentation>Get list of additional attributes which are not in default create/update list</documentation>
+            <input message="typens:marketplaceVendorListOfAdditionalAttributesRequest"/>
+            <output message="typens:marketplaceVendorListOfAdditionalAttributesResponse"/>
+        </operation>
+        <operation name="marketplaceVendorAttributeCurrentStore">
+            <documentation>Set/Get current store view</documentation>
+            <input message="typens:marketplaceVendorAttributeCurrentStoreRequest"/>
+            <output message="typens:marketplaceVendorAttributeCurrentStoreResponse"/>
+        </operation>
+        <operation name="marketplaceVendorListOfAdditionalAttributes">
+            <documentation>Get list of additional attributes which are not in default create/update list</documentation>
+            <input message="typens:marketplaceVendorListOfAdditionalAttributesRequest"/>
+            <output message="typens:marketplaceVendorListOfAdditionalAttributesResponse"/>
+        </operation>
+        <operation name="marketplaceVendorAttributeList">
+            <documentation>Retrieve vendor attribute list</documentation>
+            <input message="typens:marketplaceVendorAttributeListRequest"/>
+            <output message="typens:marketplaceVendorAttributeListResponse"/>
+        </operation>
+        <operation name="marketplaceVendorAttributeOptions">
+            <documentation>Retrieve vendor attribute options</documentation>
+            <input message="typens:marketplaceVendorAttributeOptionsRequest"/>
+            <output message="typens:marketplaceVendorAttributeOptionsResponse"/>
+        </operation>
+        <operation name="marketplaceVendorAttributeTypes">
+            <documentation>Get list of possible vendor attribute types</documentation>
+            <input message="typens:marketplaceVendorAttributeTypesRequest"/>
+            <output message="typens:marketplaceVendorAttributeTypesResponse"/>
+        </operation>
+        <operation name="marketplaceVendorAttributeCreate">
+            <documentation>Create new vendor attribute</documentation>
+            <input message="typens:marketplaceVendorAttributeCreateRequest"/>
+            <output message="typens:marketplaceVendorAttributeCreateResponse"/>
+        </operation>
+        <operation name="marketplaceVendorAttributeRemove">
+            <documentation>Delete vendor attribute</documentation>
+            <input message="typens:marketplaceVendorAttributeRemoveRequest"/>
+            <output message="typens:marketplaceVendorAttributeRemoveResponse"/>
+        </operation>
+        <operation name="marketplaceVendorAttributeInfo">
+            <documentation>Get full information about vendor attribute with list of options</documentation>
+            <input message="typens:marketplaceVendorAttributeInfoRequest"/>
+            <output message="typens:marketplaceVendorAttributeInfoResponse"/>
+        </operation>
+        <operation name="marketplaceVendorAttributeUpdate">
+            <documentation>Update vendor attribute</documentation>
+            <input message="typens:marketplaceVendorAttributeUpdateRequest"/>
+            <output message="typens:marketplaceVendorAttributeUpdateResponse"/>
+        </operation>
+        <operation name="marketplaceVendorAttributeAddOption">
+            <documentation>Add option to vendor attribute</documentation>
+            <input message="typens:marketplaceVendorAttributeAddOptionRequest"/>
+            <output message="typens:marketplaceVendorAttributeAddOptionResponse"/>
+        </operation>
+        <operation name="marketplaceVendorAttributeRemoveOption">
+            <documentation>Remove option from vendor attribute</documentation>
+            <input message="typens:marketplaceVendorAttributeRemoveOptionRequest"/>
+            <output message="typens:marketplaceVendorAttributeRemoveOptionResponse"/>
+        </operation>
+    </portType>
+    <binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="marketplaceVendorList">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorInfo">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAdd">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorUpdate">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorRemove">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAssignProduct">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorUnassignProduct">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+            <operation name="marketplaceVendorCommentList">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorCommentUpdateStatus">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorListOfAdditionalAttributes">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action"/>
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAttributeCurrentStore">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAttributeList">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAttributeOptions">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAttributeTypes">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAttributeCreate">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAttributeUpdate">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAttributeRemove">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAttributeInfo">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAttributeAddOption">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        <operation name="marketplaceVendorAttributeRemoveOption">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+    </binding>
+    <service name="{{var wsdl.name}}Service">
+        <port name="{{var wsdl.handler}}Port" binding="typens:{{var wsdl.handler}}Binding">
+            <soap:address location="{{var wsdl.url}}" />
+        </port>
+    </service>
+</definitions>

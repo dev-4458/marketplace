@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sandy_Marketplace extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Sandy
+ * @package        Sandy_Marketplace
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <sandy_marketplace translate="title" module="sandy_marketplace">
+                                        <title>Marketplace</title>
+                                    </sandy_marketplace>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <sandy_marketplace translate="title" module="sandy_marketplace">
+                        <title>Multi Marketplace</title>
+                        <children>
+                            <vendor translate="title" module="sandy_marketplace">
+                                <title>Vendor</title>
+                                <sort_order>0</sort_order>
+                            </vendor>
+                            <vendor_comments translate="title" module="sandy_marketplace">
+                                <title>Manage Vendor Comments</title>
+                                <sort_order>5</sort_order>
+                            </vendor_comments>
+                            <vendor_attributes translate="title" module="sandy_marketplace">
+                                <title>Manage Vendor attributes</title>
+                                <sort_order>7</sort_order>
+                            </vendor_attributes>
+                        </children>
+                    </sandy_marketplace>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <sandy_marketplace translate="title" module="sandy_marketplace">
+            <title>Multi Marketplace</title>
+            <sort_order>85</sort_order>
+            <children>
+                <vendor translate="title" module="sandy_marketplace">
+                    <title>Vendor</title>
+                    <action>adminhtml/marketplace_vendor</action>
+                    <sort_order>0</sort_order>
+                </vendor>
+                <vendor_comments translate="title" module="sandy_marketplace">
+                    <title>Manage Vendor Comments</title>
+                    <action>adminhtml/marketplace_vendor_comment</action>
+                    <sort_order>4</sort_order>
+                </vendor_comments>
+                <vendor_attributes translate="title" module="sandy_marketplace">
+                    <title>Manage Vendor Attributes</title>
+                    <action>adminhtml/marketplace_vendor_attribute</action>
+                    <sort_order>7</sort_order>
+                </vendor_attributes>
+            </children>
+        </sandy_marketplace>
+    </menu>
+</config>

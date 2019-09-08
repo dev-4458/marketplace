@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sandy_Marketplace extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Sandy
+ * @package        Sandy_Marketplace
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Sandy_Marketplace>
+            <version>1.0.0</version>
+        </Sandy_Marketplace>
+    </modules>
+    <global>
+        <resources>
+            <sandy_marketplace_setup>
+                <setup>
+                    <module>Sandy_Marketplace</module>
+                    <class>Sandy_Marketplace_Model_Resource_Setup</class>
+                </setup>
+            </sandy_marketplace_setup>
+        </resources>
+        <blocks>
+            <sandy_marketplace>
+                <class>Sandy_Marketplace_Block</class>
+            </sandy_marketplace>
+        </blocks>
+        <helpers>
+            <sandy_marketplace>
+                <class>Sandy_Marketplace_Helper</class>
+            </sandy_marketplace>
+        </helpers>
+        <models>
+            <sandy_marketplace>
+                <class>Sandy_Marketplace_Model</class>
+                <resourceModel>sandy_marketplace_resource</resourceModel>
+            </sandy_marketplace>
+            <sandy_marketplace_resource>
+                <class>Sandy_Marketplace_Model_Resource</class>
+                <entities>
+                    <vendor>
+                        <table>sandy_marketplace_vendor</table>
+                    </vendor>
+                    <vendor_product>
+                        <table>sandy_marketplace_vendor_product</table>
+                    </vendor_product>
+                    <vendor_comment>
+                        <table>sandy_marketplace_vendor_comment</table>
+                    </vendor_comment>
+                    <vendor_comment_store>
+                        <table>sandy_marketplace_vendor_comment_store</table>
+                    </vendor_comment_store>
+                    <eav_attribute>
+                        <table>sandy_marketplace_eav_attribute</table>
+                    </eav_attribute>
+                </entities>
+            </sandy_marketplace_resource>
+        </models>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <sandy_marketplace>
+                        <class>Sandy_Marketplace_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </sandy_marketplace>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <adminhtml>
+        <layout>
+            <updates>
+                <sandy_marketplace>
+                    <file>sandy_marketplace.xml</file>
+                </sandy_marketplace>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Sandy_Marketplace>
+                    <files>
+                        <default>Sandy_Marketplace.csv</default>
+                    </files>
+                </Sandy_Marketplace>
+            </modules>
+        </translate>
+        <events>
+            <core_block_abstract_prepare_layout_after>
+                <observers>
+                    <sandy_marketplace_vendor_product>
+                        <type>singleton</type>
+                        <class>sandy_marketplace/adminhtml_observer</class>
+                        <method>addProductVendorBlock</method>
+                    </sandy_marketplace_vendor_product>
+                </observers>
+            </core_block_abstract_prepare_layout_after>
+            <catalog_product_save_after>
+                <observers>
+                    <sandy_marketplace_vendor_product>
+                        <type>singleton</type>
+                        <class>sandy_marketplace/adminhtml_observer</class>
+                        <method>saveProductVendorData</method>
+                    </sandy_marketplace_vendor_product>
+                </observers>
+            </catalog_product_save_after>
+        </events>
+        <global_search>
+            <vendor>
+                <class>sandy_marketplace/adminhtml_search_vendor</class>
+                <acl>sandy_marketplace</acl>
+            </vendor>
+        </global_search>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Sandy_Marketplace before="Mage_Adminhtml">Sandy_Marketplace_Adminhtml</Sandy_Marketplace>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <sandy_marketplace>
+                <use>standard</use>
+                <args>
+                    <module>Sandy_Marketplace</module>
+                    <frontName>marketplace</frontName>
+                </args>
+            </sandy_marketplace>
+        </routers>
+        <layout>
+            <updates>
+                <sandy_marketplace>
+                    <file>sandy_marketplace.xml</file>
+                </sandy_marketplace>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Sandy_Marketplace>
+                    <files>
+                        <default>Sandy_Marketplace.csv</default>
+                    </files>
+                </Sandy_Marketplace>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <sandy_marketplace>
+            <vendor>
+                <breadcrumbs>1</breadcrumbs>
+                <allow_comment>1</allow_comment>
+                <rss>1</rss>
+                <meta_title>Vendors</meta_title>
+            </vendor>
+        </sandy_marketplace>
+    </default>
+</config>

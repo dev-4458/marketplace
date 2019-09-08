@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Sandy_Marketplace extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Sandy
+ * @package        Sandy_Marketplace
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<widgets>
+    <marketplace_vendor_view type="sandy_marketplace/vendor_widget_view" translate="name description" module="sandy_marketplace">
+        <name>Vendor view</name>
+        <description>Vendor view widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <vendor_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Vendor</label>
+                <type>label</type>
+                <helper_block>
+                    <type>sandy_marketplace/adminhtml_vendor_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Vendor</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>120</sort_order>
+            </vendor_id>
+        </parameters>
+    </marketplace_vendor_view>
+    <marketplace_vendor_link type="sandy_marketplace/vendor_widget_link" translate="name description" module="sandy_marketplace">
+        <name>Vendor link</name>
+        <description>Vendor link widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <vendor_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Vendor</label>
+                <type>label</type>
+                <helper_block>
+                    <type>sandy_marketplace/adminhtml_vendor_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Vendor</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>130</sort_order>
+            </vendor_id>
+        </parameters>
+    </marketplace_vendor_link>
+</widgets>
